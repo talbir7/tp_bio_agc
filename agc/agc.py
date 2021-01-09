@@ -215,13 +215,13 @@ def chimera_removal(amplicon_file, minseqlen, mincount, chunk_size, kmer_size):
                     perc_identity_matrix[j].append(identity)
         if not detect_chimera(perc_identity_matrix):
             non_chimere.append(squence)
-            kmer_dict = get_unique_kmer(kmer_dict, seq, id_seq, kmer_size)
+            kmer_dict = get_unique_kmer(kmer_dict, sequence, id_seq, kmer_size)
             id_seq += 1
             yield [sequence, count]
 
 """ Regroupement glouton """
 
-# Elle retourne une liste d’OTU, cette liste indiquera pour chaque séquence son occurrence (count)
+# Retourne une liste d’OTU, cette liste indiquera pour chaque séquence son occurrence (count)
 
 def abundance_greedy_clustering(amplicon_file, minseqlen, mincount, chunk_size, kmer_size):
 
